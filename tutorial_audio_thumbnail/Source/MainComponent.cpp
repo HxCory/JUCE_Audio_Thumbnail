@@ -4,8 +4,9 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 class MainContentComponent   : public AudioAppComponent,
-                               private ChangeListener,
-                               private ButtonListener
+                               public ChangeListener,
+                               public ButtonListener,
+                               private Timer
 {
 public:
     MainContentComponent()
@@ -38,6 +39,7 @@ public:
         thumbnail.addChangeListener (this);            // [6]
 
         setAudioChannels (2, 2);
+        //startTimer(40);
     }
 
     ~MainContentComponent()
@@ -102,6 +104,11 @@ private:
         Playing,
         Stopping
     };
+    
+    void timerCallback() override
+    {
+        repaint();
+    }
 
     void changeState (TransportState newState)
     {
@@ -162,11 +169,21 @@ private:
 
         g.setColour (Colours::red);                                     // [8]
 
+        const double audioLength(thumbnail.getTotalLength());
         thumbnail.drawChannels (g,                                      // [9]
                                 thumbnailBounds,
                                 0.0,                                    // start time
-                                thumbnail.getTotalLength(),             // end time
+                                audioLength,             // end time
                                 1.0f);                                  // vertical zoom
+    
+        g.setColour(Colours::green);
+        
+        const double audioPosition(transportSource.getCurrentPosition());
+        const float drawPosition((audioPosition / audioLength) * thumbnailBounds.getWidth()
+                                 + thumbnailBounds.getX());
+        
+        g.drawLine(drawPosition, thumbnailBounds.getY(), drawPosition,
+                   thumbnailBounds.getBottom(), 2.0f);
     }
 
     void openButtonClicked()
@@ -187,6 +204,7 @@ private:
                 playButton.setEnabled (true);
                 thumbnail.setSource (new FileInputSource (file));          // [7]
                 readerSource = newSource.release();
+                startTimer(40);
             }
         }
     }
