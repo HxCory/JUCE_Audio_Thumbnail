@@ -70,7 +70,7 @@ class SimplePositionOverlay : public Component,
                               private Timer
 {
 public:
-    SimplePositionOverlay(const AudioTransportSource& transportSourceToUse)
+    SimplePositionOverlay(AudioTransportSource& transportSourceToUse)
         : transportSource(transportSourceToUse)
     {
         startTimer(40);
@@ -110,7 +110,7 @@ private:
         repaint();
     }
     
-    const AudioTransportSource& transportSource;
+    AudioTransportSource& transportSource;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SimplePositionOverlay)
 };
