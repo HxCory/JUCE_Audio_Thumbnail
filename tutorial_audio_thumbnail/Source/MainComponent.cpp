@@ -107,8 +107,8 @@ private:
 //------------------------------------------------------------------------------
 
 class MainContentComponent   : public AudioAppComponent,
-                               private ChangeListener,
-                               private ButtonListener
+                               public ChangeListener,
+                               public ButtonListener
 {
 public:
     MainContentComponent()
