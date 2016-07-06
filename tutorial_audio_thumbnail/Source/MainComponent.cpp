@@ -4,13 +4,13 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 
 class SimpleThumbnailComponent : public Component,
-private ChangeListener
+                                 private ChangeListener
 {
 public:
     SimpleThumbnailComponent (int sourceSamplesPerThumbnailSample,
                               AudioFormatManager& formatManager,
                               AudioThumbnailCache& cache)
-    : thumbnail (sourceSamplesPerThumbnailSample, formatManager, cache)
+        : thumbnail (sourceSamplesPerThumbnailSample, formatManager, cache)
     {
         thumbnail.addChangeListener (this);
     }
@@ -67,11 +67,11 @@ private:
 //------------------------------------------------------------------------------
 
 class SimplePositionOverlay : public Component,
-private Timer
+                              private Timer
 {
 public:
     SimplePositionOverlay(const AudioTransportSource& transportSourceToUse)
-    : transportSource(transportSourceToUse)
+        : transportSource(transportSourceToUse)
     {
         startTimer(40);
     }
@@ -81,17 +81,29 @@ public:
         const double duration = transportSource.getLengthInSeconds();
         
         if(duration > 0.0)
-        {
-            g.setColour(Colours::green);
-            
+        {            
             const double audioPosition = transportSource.getCurrentPosition();
             const float drawPosition = (audioPosition / duration) * getWidth();
             
+            g.setColour(Colours::green);
             g.drawLine(drawPosition, 0.0f, drawPosition,
                        (float) getHeight(), 2.0f);
         }
     }
     
+    void mouseDown(const MouseEvent& event) override
+    {
+        const double duration = transportSource.getLengthInSeconds();
+
+        if(duration > 0.0)
+        {
+            const double clickPosition = event.position.x;
+            const double audioPosition = (clickPosition / getWidth()) * duration;
+
+            transportSource.setPosition(audioPosition);
+        }
+    }
+
 private:
     void timerCallback() override
     {
@@ -112,10 +124,10 @@ class MainContentComponent   : public AudioAppComponent,
 {
 public:
     MainContentComponent()
-    : state (Stopped),
-    thumbnailCache (5),                            // [4]
-    thumbnailComp (512, formatManager, thumbnailCache), // [5]
-    positionOverlay(transportSource)
+      : state (Stopped),
+        thumbnailCache (5),                            // [4]
+        thumbnailComp (512, formatManager, thumbnailCache), // [5]
+        positionOverlay(transportSource)
     {
         setLookAndFeel (&lookAndFeel);
         
@@ -144,7 +156,6 @@ public:
         transportSource.addChangeListener (this);
         
         setAudioChannels (2, 2);
-        //startTimer(40);
     }
     
     ~MainContentComponent()
@@ -159,13 +170,9 @@ public:
     
     void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
     {
-        if (readerSource == nullptr)
-        {
-            bufferToFill.clearActiveBufferRegion();
-            return;
-        }
-        
-        transportSource.getNextAudioBlock (bufferToFill);
+        readerSource == nullptr
+            ? bufferToFill.clearActiveBufferRegion()
+            : transportSource.getNextAudioBlock (bufferToFill);
     }
     
     void releaseResources() override
@@ -187,7 +194,8 @@ public:
     
     void changeListenerCallback (ChangeBroadcaster* source) override
     {
-        if (source == &transportSource) transportSourceChanged();
+        if (source == &transportSource) 
+            transportSourceChanged();
     }
     
     void buttonClicked (Button* button) override
@@ -245,11 +253,6 @@ private:
     {
         changeState (transportSource.isPlaying() ? Playing : Stopped);
     }
-    
-    void thumbnailChanged()
-    {
-        repaint();
-    }
 
     void openButtonClicked()
     {
@@ -269,7 +272,6 @@ private:
                 playButton.setEnabled (true);
                 thumbnailComp.setFile (file);          // [7]
                 readerSource = newSource.release();
-                startTimer(40);
             }
         }
     }
