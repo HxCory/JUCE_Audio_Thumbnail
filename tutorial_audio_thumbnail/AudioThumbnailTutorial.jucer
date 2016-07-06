@@ -19,20 +19,20 @@
                        isDebug="0" optimisation="2" targetName="AudioThumbnailTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../../modules"/>
-        <MODULEPATH id="juce_events" path="../../modules"/>
-        <MODULEPATH id="juce_graphics" path="../../modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../modules"/>
-        <MODULEPATH id="juce_cryptography" path="../../modules"/>
-        <MODULEPATH id="juce_video" path="../../modules"/>
-        <MODULEPATH id="juce_opengl" path="../../modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../../modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../modules"/>
+        <MODULEPATH id="juce_core" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../Desktop/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
     <VS2013 targetFolder="Builds/VisualStudio2013">
@@ -43,20 +43,20 @@
                        isDebug="0" optimisation="2" targetName="AudioThumbnailTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_video" path="../../modules"/>
-        <MODULEPATH id="juce_opengl" path="../../modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
-        <MODULEPATH id="juce_graphics" path="../../modules"/>
-        <MODULEPATH id="juce_events" path="../../modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../modules"/>
-        <MODULEPATH id="juce_cryptography" path="../../modules"/>
-        <MODULEPATH id="juce_core" path="../../modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../../modules"/>
+        <MODULEPATH id="juce_video" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../Desktop/JUCE/modules"/>
       </MODULEPATHS>
     </VS2013>
     <LINUX_MAKE targetFolder="Builds/Linux">
@@ -67,20 +67,20 @@
                        targetName="AudioThumbnailTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_video" path="../../modules"/>
-        <MODULEPATH id="juce_opengl" path="../../modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../modules"/>
-        <MODULEPATH id="juce_graphics" path="../../modules"/>
-        <MODULEPATH id="juce_events" path="../../modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../modules"/>
-        <MODULEPATH id="juce_cryptography" path="../../modules"/>
-        <MODULEPATH id="juce_core" path="../../modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../../modules"/>
+        <MODULEPATH id="juce_video" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../Desktop/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../Desktop/JUCE/modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
   </EXPORTFORMATS>
